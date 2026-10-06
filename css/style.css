@@ -1,0 +1,930 @@
+/* =========================================================
+   Hitesh Sathvara - Portfolio
+   File: css/style.css
+   ========================================================= */
+
+/* ---------- 1. Colors (light theme is the default) ---------- */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #f5f7fb;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --accent-strong: #1d4ed8;
+  --on-accent: #ffffff;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --border: #e2e8f0;
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 2px 4px rgba(15, 23, 42, 0.06), 0 14px 32px rgba(15, 23, 42, 0.12);
+  --show-moon: inline-block;
+  --show-sun: none;
+
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius: 16px;
+  --header-height: 64px;
+}
+
+/* Dark theme: used automatically when the device is in dark mode,
+   unless the visitor chose light with the toggle button */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0b1220;
+    --surface: #121a2b;
+    --text: #e5e9f2;
+    --muted: #9aa6bc;
+    --accent: #5b9bff;
+    --accent-strong: #8db8ff;
+    --on-accent: #0b1220;
+    --accent-soft: rgba(91, 155, 255, 0.14);
+    --border: #1f2a44;
+    --header-bg: rgba(11, 18, 32, 0.88);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 32px rgba(0, 0, 0, 0.4);
+    --show-moon: none;
+    --show-sun: inline-block;
+  }
+}
+
+/* Dark theme: used when the visitor chose dark with the toggle button */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --surface: #121a2b;
+  --text: #e5e9f2;
+  --muted: #9aa6bc;
+  --accent: #5b9bff;
+  --accent-strong: #8db8ff;
+  --on-accent: #0b1220;
+  --accent-soft: rgba(91, 155, 255, 0.14);
+  --border: #1f2a44;
+  --header-bg: rgba(11, 18, 32, 0.88);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 32px rgba(0, 0, 0, 0.4);
+  --show-moon: none;
+  --show-sun: inline-block;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 8px);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+}
+
+/* Skip link (for keyboard users) */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Links that are not ready yet (placeholders) */
+.link-pending {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---------- 3. Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.btn-outline:hover {
+  background: var(--accent-soft);
+}
+
+.btn-small {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-row-center {
+  justify-content: center;
+}
+
+/* ---------- 4. Header and navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  min-height: var(--header-height);
+}
+
+.nav-logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+/* Show only the correct theme icon */
+.icon-btn .icon-moon {
+  display: var(--show-moon);
+}
+
+.icon-btn .icon-sun {
+  display: var(--show-sun);
+}
+
+/* Hamburger / close icons */
+.nav-toggle .icon-close {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .icon-open {
+  display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .icon-close {
+  display: inline-block;
+}
+
+/* Mobile menu panel (hidden until the button is clicked) */
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 20px 1.25rem;
+  list-style: none;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.nav-links.is-open {
+  display: flex;
+}
+
+.nav-links a:not(.btn) {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-links a:not(.btn):hover {
+  color: var(--accent-strong);
+}
+
+.nav-links .btn {
+  margin-top: 0.5rem;
+}
+
+/* Desktop navigation */
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .nav-links .btn {
+    margin-top: 0;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+  }
+}
+
+/* ---------- 5. Sections ---------- */
+.section {
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.section-alt {
+  background: var(--surface);
+}
+
+.section-alt .card {
+  background: var(--bg);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- 6. Cards, tags, lists ---------- */
+.card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.tags li {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.stack-list > div,
+.facts > div {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.stack-list > div:last-child,
+.facts > div:last-child {
+  border-bottom: 0;
+}
+
+.stack-list,
+.facts {
+  margin: 0;
+}
+
+.stack-list dt,
+.facts dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stack-list dd,
+.facts dd {
+  margin: 0.15rem 0 0;
+  font-weight: 600;
+}
+
+/* ---------- 7. Hero ---------- */
+.hero {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-text .eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 7vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero-role {
+  margin: 0.5rem 0 0.25rem;
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.hero-sub {
+  color: var(--muted);
+}
+
+.hero-intro {
+  max-width: 60ch;
+  margin-bottom: 1.75rem;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  line-height: 1.7;
+  text-align: left;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.hero-card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.social-list {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  list-style: none;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+@media (max-width: 519px) {
+  .hero .btn-row .btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 4rem;
+  }
+}
+
+/* ---------- 8. About ---------- */
+.about-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.about-text p {
+  max-width: 60ch;
+  margin-bottom: 1.75rem;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  line-height: 1.7;
+  text-align: left;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+/* ---------- 9. Skills ---------- */
+.skills-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skills-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- 10. Projects ---------- */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.project-media {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.project-date {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.feature-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.15rem;
+}
+
+.feature-list li::marker {
+  color: var(--accent);
+}
+
+.learned {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.project-body .tags {
+  margin-bottom: 1.25rem;
+}
+
+.project-body .btn-row {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- 11. Education timeline ---------- */
+.timeline {
+  position: relative;
+  max-width: 720px;
+  padding-left: 1.75rem;
+  border-left: 2px solid var(--border);
+  list-style: none;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: calc(-1.75rem - 8px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+}
+
+.timeline-school {
+  margin-bottom: 0.15rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.timeline-meta {
+  margin-bottom: 0.15rem;
+  color: var(--muted);
+}
+
+.timeline-score {
+  margin: 0;
+}
+
+/* ---------- 12. Certifications ---------- */
+.cert-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cert-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.cert-grid .card p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- 13. Resume ---------- */
+.resume-card {
+  max-width: 640px;
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.resume-card .section-title {
+  margin-bottom: 1rem;
+}
+
+.resume-card p {
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- 14. Contact ---------- */
+.contact-lead {
+  max-width: 80ch;
+  margin-bottom: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-item .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--accent-strong);
+}
+
+a.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+@media (min-width: 600px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- 15. Footer ---------- */
+.site-footer {
+  padding-block: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-inner .social-list {
+  margin: 0;
+}
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- 16. Scroll animation (classes added by js/script.js) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- 17. Reduce motion for visitors who prefer it ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   Paragraph formatting helpers
+   Add these class names to any <p> or <div> in index.html
+   ========================================================= */
+
+/* Text alignment: left, centre, right, justify */
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-justify { text-align: justify; hyphens: auto; }
+
+/* Paragraph width */
+.para-narrow { max-width: 45ch; }
+.para-medium { max-width: 60ch; }
+.para-wide   { max-width: 75ch; }
+
+/* Paragraph box position: left, centre, right of its section */
+.block-left   { margin-left: 0;    margin-right: auto; }
+.block-center { margin-left: auto; margin-right: auto; }
+.block-right  { margin-left: auto; margin-right: 0; }
+
+/* Space above (up) */
+.space-top-0 { margin-top: 0; }
+.space-top-1 { margin-top: 0.5rem; }
+.space-top-2 { margin-top: 1rem; }
+.space-top-3 { margin-top: 1.5rem; }
+.space-top-4 { margin-top: 2rem; }
+
+/* Space below (down) */
+.space-bottom-0 { margin-bottom: 0; }
+.space-bottom-1 { margin-bottom: 0.5rem; }
+.space-bottom-2 { margin-bottom: 1rem; }
+.space-bottom-3 { margin-bottom: 1.5rem; }
+.space-bottom-4 { margin-bottom: 2rem; }
+
+/* Space inside the paragraph box (padding) */
+.pad-1 { padding: 0.5rem; }
+.pad-2 { padding: 1rem; }
+.pad-3 { padding: 1.5rem; }
+
+/* Line spacing */
+.leading-tight   { line-height: 1.4; }
+.leading-normal  { line-height: 1.65; }
+.leading-relaxed { line-height: 1.85; }
+
+/* First line indent */
+.indent-first { text-indent: 2rem; }
+
+/* Centre on phones, normal alignment on larger screens */
+@media (max-width: 767px) {
+  .center-on-mobile { text-align: center; }
+  .center-on-mobile.block-left,
+  .center-on-mobile.block-right { margin-left: auto; margin-right: auto; }
+}
+
+/* Centre the whole hero text block (name, role, intro, buttons, icons) */
+.hero-text-center { text-align: center; }
+.hero-text-center .hero-intro { margin-left: auto; margin-right: auto; }
+.hero-text-center .btn-row,
+.hero-text-center .social-list { justify-content: center; }

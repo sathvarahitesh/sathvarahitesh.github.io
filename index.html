@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitesh Sathvara | Python Developer &amp; Software Engineer</title>
+  <meta name="description" content="Portfolio of Hitesh Sathvara, a Python developer and software engineer (MCA student) from Ahmedabad. View projects, skills and resume.">
+  <meta name="author" content="Hitesh Sathvara">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Open Graph (og:url and og:image are added in Step 17, after the live URL exists) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hitesh Sathvara | Python Developer &amp; Software Engineer">
+  <meta property="og:description" content="Python developer and software engineer (MCA student) from Ahmedabad. View projects, skills and resume.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Font: Inter (the CSS has a system-font fallback if this fails to load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Applies the saved theme before the page paints (prevents a flash) -->
+  <script>
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") {
+        document.documentElement.setAttribute("data-theme", saved);
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- Icon sprite (all icons are stored here, no external icon library) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.17-3.47-8.44ZM12.08 21.84h-.01a9.91 9.91 0 0 1-5.05-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.88 9.88 0 1 1 8.38 4.61Zm5.42-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></g></symbol>
+    <symbol id="icon-leetcode" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 3.5 9 9l5.5 5.5-1.5 1.5-7-7 7-7 1.5 1.5ZM16 5h2.5A3.5 3.5 0 0 1 22 8.5v7a3.5 3.5 0 0 1-3.5 3.5H11v-2h7.5a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 18.5 7H16V5Z"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-6.77 7.74L23.2 22h-6.4l-5.02-6.56L6.04 22H2.93l7.24-8.28L2.4 2h6.56l4.54 5.98L18.9 2Zm-1.12 17.87h1.72L7.55 4h-1.8l12.03 15.87Z"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></g></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></g></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></g></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></g></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></g></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav-logo" href="#home">Hitesh Sathvara</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-outline btn-small" href="assets/resume/Hitesh_Sathvara_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-open" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I'm</p>
+          <h1 id="hero-title">Hitesh Sathvara</h1>
+          <!-- TODO: confirm headline (Python & Django Developer or Software Engineer) -->
+          <p class="hero-role">Python Developer | Software Engineer</p>
+          <p class="hero-sub">MCA Student · Ahmedabad, Gujarat, India</p>
+          <p class="hero-intro">I develop database-driven web applications using Python and Django, with a strong interest in building practical and scalable software solutions. As an MCA final-year student, I enjoy transforming ideas into functional projects while continuously expanding my technical skills. I am currently seeking an opportunity to begin my career as a Software Developer and contribute to real-world development projects.</p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="assets/resume/Hitesh_Sathvara_Resume.pdf" download="Hitesh_Sathvara_Resume.pdf">Download Resume</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+
+          <ul class="social-list" aria-label="Social links">
+            <!-- TODO: replace the GitHub link below with your real GitHub profile URL -->
+            <li><a href="https://github.com/sathvarahitesh" class="social-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/hitesh-satvara/" class="social-link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></li>
+            <li><a href="mailto:hbsatvara@gmail.com" class="social-link" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg></a></li>
+            <li><a href="tel:+919016104143" class="social-link" aria-label="Call me" title="Call me"><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg></a></li>
+             <li><a href="https://wa.me/919016104143"class="social-link"aria-label="WhatsApp"target="_blank"rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg></a></li>
+             <li><a href="https://x.com/HbsatvaraHitesh" class="social-link" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-x"/></svg></a></li>
+             <li><a href="https://leetcode.com/u/Hitesh_Sathvara/" class="social-link" aria-label="LeetCode" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-leetcode"/></svg></a></li>
+          </ul>
+        </div>
+
+        <aside class="hero-card card" aria-label="Tech stack summary">
+          <h2 class="hero-card-title">Tech stack</h2>
+          <dl class="stack-list">
+            <div><dt>Languages</dt><dd>Python · Java · SQL · JavaScript</dd></div>
+            <div><dt>Frameworks</dt><dd>Django · Flask</dd></div>
+            <div><dt>Databases</dt><dd>MySQL · SQLite</dd></div>
+            <div><dt>Tools</dt><dd>Git &amp; GitHub · VS Code</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title" id="about-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm Hitesh Sathvara, a BCA graduate currently pursuing my Master of Computer Application (MCA) at K.N. University, Ahmedabad. I have a strong foundation in programming with Python, Java and SQL, and I build web applications using HTML, CSS, JavaScript and frameworks such as Django and Flask.</p>
+            <p>I also have basic knowledge of networking, cloud computing, Linux and cybersecurity. I enjoy coding and exploring new technology tools, and I'm eager to begin a career in the IT industry, apply my technical skills and keep learning.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Quick facts</h3>
+            <dl class="facts">
+              <div><dt>Location</dt><dd>Ahmedabad, Gujarat, India</dd></div>
+              <div><dt>Studying</dt><dd>MCA, K.N. University</dd></div>
+              <div><dt>Languages</dt><dd>English, Hindi, Gujarati</dd></div>
+              <div><dt>Interests</dt><dd>Coding, exploring tech tools</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section-title" id="skills-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <article class="card">
+            <h3 class="card-title">Languages</h3>
+            <ul class="tags">
+              <li>Python</li><li>Java</li><li>SQL</li><li>PHP</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Frameworks</h3>
+            <ul class="tags">
+              <li>Django</li><li>Flask</li><li>Bootstrap</li><li>.NET Framework</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Databases</h3>
+            <ul class="tags">
+              <li>MySQL</li><li>SQLite</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Tools &amp; Platforms</h3>
+            <ul class="tags">
+              <li>Git &amp; GitHub</li><li>VS Code</li><li>IntelliJ</li><li>PyCharm</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Foundational Knowledge</h3>
+            <ul class="tags">
+              <li>Basics of Networking</li><li>Basics of Cloud Computing</li><li>Linux</li><li>Cybersecurity Fundamentals</li><li>Machine Learning Basics</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section-title" id="projects-title">What I've Built</h2>
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="card project-card">
+            <figure class="project-media">
+              <img src="assets/images/projects/greatkart.png" alt="Screenshot of the GreatKart Online Shopping System" width="800" height="450" loading="lazy">
+            </figure>
+            <div class="project-body">
+              <p class="project-date"><time datetime="2026-01">01/2026</time></p>
+              <h3 class="card-title">GreatKart Online Shopping System</h3>
+              <p>A full-stack e-commerce web application built with Django.</p>
+              <ul class="feature-list">
+                <li>Authentication</li>
+                <li>Product management</li>
+                <li>Cart</li>
+                <li>Order system</li>
+              </ul>
+              <p class="learned"><strong>What I learned:</strong> Django's MVT architecture and database-driven web development.</p>
+              <ul class="tags"><li>Django</li></ul>
+              <div class="btn-row">
+                <!-- TODO: replace # with the GreatKart GitHub repository URL -->
+              <a class="btn btn-outline btn-small" href="https://github.com/sathvarahitesh/greatkart-django" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card project-card">
+            <figure class="project-media">
+              <img src="assets/images/projects/study-portal.png" alt="Screenshot of the Student Study Portal" width="800" height="450" loading="lazy">
+            </figure>
+            <div class="project-body">
+              <p class="project-date"><time datetime="2025-10">10/2025</time></p>
+              <h3 class="card-title">Student Study Portal</h3>
+              <p>A student portal that brings study resources and tasks into one platform, built with Python and Django.</p>
+              <ul class="feature-list">
+                <li>Secure login</li>
+                <li>YouTube resources</li>
+                <li>Books</li>
+                <li>Dictionary</li>
+                <li>To-do list</li>
+                <li>Homework management</li>
+              </ul>
+              <p class="learned"><strong>What I learned:</strong> Django, authentication and database integration.</p>
+              <ul class="tags"><li>Python</li><li>Django</li></ul>
+              <div class="btn-row">
+                <!-- TODO: replace # with the Student Study Portal GitHub repository URL -->
+                <a class="btn btn-outline btn-small" href="https://github.com/sathvarahitesh/student-study-portal-django" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card project-card">
+            <figure class="project-media">
+              <img src="assets/images/projects/bus-booking.png" alt="Screenshot of the Online Bus Booking System" width="800" height="450" loading="lazy">
+            </figure>
+            <div class="project-body">
+              <p class="project-date"><time datetime="2025-02">02/2025</time></p>
+              <h3 class="card-title">Online Bus Booking System</h3>
+              <p>An online bus booking system built with ASP.NET.</p>
+              <ul class="feature-list">
+                <li>User registration</li>
+                <li>Bus search</li>
+                <li>Seat booking</li>
+                <li>Ticket management</li>
+                <li>Database integration</li>
+              </ul>
+              <p class="learned"><strong>What I learned:</strong> ASP.NET, database connectivity and teamwork.</p>
+              <ul class="tags"><li>ASP.NET</li></ul>
+              <div class="btn-row">
+                <!-- TODO: replace # with the Online Bus Booking System GitHub repository URL -->
+                <a class="btn btn-outline btn-small" href="https://github.com/sathvarahitesh/online-bus-booking-system-aspnet" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card project-card">
+            <figure class="project-media">
+              <img src="assets/images/projects/coffee-shop.png" alt="Screenshot of The Green Coffee Shop website" width="800" height="450" loading="lazy">
+            </figure>
+            <div class="project-body">
+              <p class="project-date"><time datetime="2024-10">10/2024</time></p>
+              <h3 class="card-title">The Green Coffee Shop</h3>
+              <p>A coffee shop management website built with PHP.</p>
+              <ul class="feature-list">
+                <li>Authentication</li>
+                <li>Menu</li>
+                <li>Order management</li>
+              </ul>
+              <p class="learned"><strong>What I learned:</strong> PHP, MySQL and database-driven web development.</p>
+              <ul class="tags"><li>PHP</li><li>MySQL</li></ul>
+              <div class="btn-row">
+                <!-- TODO: replace # with The Green Coffee Shop GitHub repository URL -->
+                <a class="btn btn-outline btn-small" href="https://github.com/sathvarahitesh/coffee-shop-php-mysql" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section section-alt" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <p class="eyebrow">Education</p>
+        <h2 class="section-title" id="education-title">Education</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <h3 class="card-title">Master of Computer Application (MCA)</h3>
+            <p class="timeline-school">K.N. University</p>
+            <p class="timeline-meta">Ahmedabad · 08/2025 – Present</p>
+            <p class="timeline-score">CGPA: <strong>8.67</strong> / 10</p>
+          </li>
+          <li class="timeline-item">
+            <h3 class="card-title">Bachelor of Computer Application (BCA)</h3>
+            <p class="timeline-school">T.N. Rao College</p>
+            <p class="timeline-meta">Rajkot · 07/2022 – 03/2025</p>
+            <p class="timeline-score">CGPA: <strong>8.36</strong> / 10</p>
+          </li>
+          <li class="timeline-item">
+            <h3 class="card-title">Higher Secondary Certificate (H.S.C.)</h3>
+            <p class="timeline-school">Taxshila School &amp; College</p>
+            <p class="timeline-meta">Halvad · 06/2021 – 03/2022</p>
+            <p class="timeline-score">Percentage: <strong>66%</strong></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certifications" aria-labelledby="cert-title">
+      <div class="container">
+        <p class="eyebrow">Certifications</p>
+        <h2 class="section-title" id="cert-title">Certifications &amp; Training</h2>
+        <div class="cert-grid">
+          <article class="card">
+            <h3 class="card-title">Code Carnival – Programming Competition</h3>
+            <p class="muted">Coding competition organized by Rao Information Tech Pvt. Ltd</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Hardware Workshop</h3>
+            <p class="muted">Organized by T.N. Rao College, Rajkot</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Crash Course on Python</h3>
+            <p class="muted">Coursera</p>
+          </article>
+          <article class="card">
+            <h3 class="card-title">Python for Data Science, AI &amp; Development</h3>
+            <p class="muted">Coursera</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section class="section section-alt" id="resume" aria-labelledby="resume-title">
+      <div class="container">
+        <div class="card resume-card">
+          <p class="eyebrow">Resume</p>
+          <h2 class="section-title" id="resume-title">My Resume</h2>
+          <p>Want the full details? View or download my resume.</p>
+          <div class="btn-row btn-row-center">
+            <a class="btn btn-primary" href="assets/resume/Hitesh_Sathvara_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+            <a class="btn btn-outline" href="assets/resume/Hitesh_Sathvara_Resume.pdf" download="Hitesh_Sathvara_Resume.pdf">
+              <svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title" id="contact-title">Get in Touch</h2>
+        <!-- TODO: confirm this contact line -->
+        <p class="contact-lead">I'm open to fresher and internship opportunities. Feel free to reach me by email, phone or LinkedIn.</p>
+
+        <div class="contact-grid">
+          <a class="card contact-item" href="mailto:hbsatvara@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+            <span><strong>Email</strong><br>hbsatvara@gmail.com</span>
+          </a>
+
+            <a class="card contact-item" href="tel:+919016104143">
+            <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
+            <span><strong>Phone</strong><br>+91 90161 04143</span>
+          </a>
+          <a class="card contact-item" href="https://www.linkedin.com/in/hitesh-satvara/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+            <span><strong>LinkedIn</strong><br>hitesh-satvara</span>
+          </a>
+          <!-- TODO: replace # with your real GitHub profile URL -->
+          <a class="card contact-item" href="https://github.com/sathvarahitesh" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg>
+            <span><strong>GitHub</strong><br>sathvarahitesh</span>
+          </a>
+          <div class="card contact-item">
+            <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
+            <span><strong>Location</strong><br>Ahmedabad, Gujarat, India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Hitesh Sathvara. MCA Student / Software Engineer.</p>
+      <ul class="social-list" aria-label="Social links">
+        <!-- TODO: replace # with your real GitHub profile URL -->
+        <li><a href="https://github.com/sathvarahitesh" class="social-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-github"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/hitesh-satvara/" class="social-link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-linkedin"/></svg></a></li>
+        <li><a href="mailto:hbsatvara@gmail.com" class="social-link" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg></a></li>
+        <li><a href="tel:+919016104143" class="social-link" aria-label="Call me" title="Call me"><svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg></a></li>
+         <li><a href="https://wa.me/919016104143"class="social-link"aria-label="WhatsApp"target="_blank"rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg></a></li>
+         <li><a href="https://leetcode.com/u/Hitesh_Sathvara/" class="social-link" aria-label="LeetCode" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-leetcode"/></svg></a></li>
+         <li><a href="https://x.com/HbsatvaraHitesh" class="social-link" aria-label="X / Twitter" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-x"/></svg></a></li>
+      </ul>
+      <a class="back-to-top" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
